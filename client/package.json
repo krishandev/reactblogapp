@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "index.js",
   "scripts": {
-    "dev": "nodemon api/index.js",
+    "dev": "vite && nodemon api/index.js",
+    "build": "vite build && npm install && npm install --prefix client && npm run build --prefix client",
     "start": "node api/index.js",
-    "build": "npm install && npm install --prefix client && npm run build --prefix client"
-    
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
